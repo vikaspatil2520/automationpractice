@@ -6,16 +6,22 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.automationpractice.qa.util.Constants;
+import com.automationpractice.qa.util.WebEventListener;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 	public static Properties prop;
 	public static WebDriver driver;
+	public static Logger log;
+	public static EventFiringWebDriver eventFiringWebDriver;
+	public static WebEventListener webEventListener;
 	
 	public TestBase() {
 		prop=new Properties();
@@ -28,16 +34,24 @@ public class TestBase {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		
 	
 	}
 	
 	public static void initialization() {
-		String browserName=prop.getProperty("browser");
-		if(browserName.equalsIgnoreCase("Chrome")) {
+		String browser=prop.getProperty("browser");
+		if(browser.equalsIgnoreCase("Chrome")) {
 			System.out.println("Chrome Browser selected");
 			WebDriverManager.chromedriver().setup();
 			driver=new ChromeDriver();			
 		}
+		
+		eventFiringWebDriver=new EventFiringWebDriver(driver);
+		// Now create object of EventListerHandler to register it with EventFiringWebDriver
+		webEventListener=new WebEventListener();
+		eventFiringWebDriver.register(webEventListener);
+		driver=eventFiringWebDriver;
 		
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
