@@ -7,7 +7,6 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import com.automationpractice.qa.base.TestBase;
 
-
 public class WebEventListener extends TestBase implements WebDriverEventListener {
 
 	public void beforeAlertAccept(WebDriver driver) {

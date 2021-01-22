@@ -15,14 +15,15 @@ public class TestPageTest extends TestBase{
 	@Test(priority=1)
 	public void successTest() {
 		initialization();
+		login();
 		Assert.assertTrue(true);
 		driver.quit();
 	}
 	
-	@Test(priority=2)
+	/*@Test(priority=2)
 	public void failTest() {
 		initialization();
 		Assert.assertTrue(false);
 		driver.quit();
-	}
+	}*/
 }

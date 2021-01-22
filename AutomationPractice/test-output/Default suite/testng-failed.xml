@@ -3,11 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automationpractice.qa.testcases.TestPageTest">
+      <class name="com.automationpractice.qa.testcases.HomePageTest">
         <methods>
-          <include name="failTest"/>
+          <include name="homePageElementDispalyTest"/>
+          <include name="setup"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.automationpractice.qa.testcases.TestPageTest -->
+      </class> <!-- com.automationpractice.qa.testcases.HomePageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import com.automationpractice.qa.pages.SignInPage;
 import com.automationpractice.qa.util.Constants;
 import com.automationpractice.qa.util.WebEventListener;
 
@@ -33,9 +34,7 @@ public class TestBase {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
-		
+		}	
 	
 	}
 	
@@ -51,6 +50,7 @@ public class TestBase {
 		// Now create object of EventListerHandler to register it with EventFiringWebDriver
 		webEventListener=new WebEventListener();
 		eventFiringWebDriver.register(webEventListener);
+		
 		driver=eventFiringWebDriver;
 		
 		driver.manage().window().maximize();
@@ -58,5 +58,13 @@ public class TestBase {
 		driver.manage().timeouts().pageLoadTimeout(Constants.PAGE_LOAD_TIMEOUT,TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT,TimeUnit.SECONDS);		
 		driver.get(prop.getProperty("url"));
+	}
+	
+	public static void login() {		
+		SignInPage signInPage=new SignInPage(driver);
+		signInPage.getSignInLink().click();
+		signInPage.setEmailField(prop.getProperty("emailId"));
+		signInPage.setPasswordField(prop.getProperty("password"));
+		signInPage.getSignInSubmitBtn().click();
 	}
 }

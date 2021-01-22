@@ -27,8 +27,8 @@ public class ExtentReporterNG extends TestBase implements IReporter {
 	
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
 		
+		
 		extentReport = new ExtentReports(outputDirectory + File.separator + "Extent.html", true);
-		//extentReport.config().setTheme(Theme.DARK);
 		
 		for (ISuite suite : suites) {
 			Map<String, ISuiteResult> result = suite.getResults();

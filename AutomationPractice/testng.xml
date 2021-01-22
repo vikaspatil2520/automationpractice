@@ -8,6 +8,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.automationpractice.qa.testcases.TestPageTest"/>
+      <class name="com.automationpractice.qa.testcases.CreateAccountPageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
