@@ -9,6 +9,7 @@
     <classes>
       <class name="com.automationpractice.qa.testcases.TestPageTest"/>
       <class name="com.automationpractice.qa.testcases.CreateAccountPageTest"/>
+       <class name="com.automationpractice.qa.testcases.ShoppingWorkFlowTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

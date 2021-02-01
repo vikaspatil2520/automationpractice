@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
+import com.automationpractice.qa.pages.HomePage;
 import com.automationpractice.qa.pages.SignInPage;
 import com.automationpractice.qa.util.Constants;
 import com.automationpractice.qa.util.WebEventListener;
@@ -62,9 +63,11 @@ public class TestBase {
 	
 	public static void login() {		
 		SignInPage signInPage=new SignInPage(driver);
+		HomePage homePage=new HomePage(driver);
 		signInPage.getSignInLink().click();
 		signInPage.setEmailField(prop.getProperty("emailId"));
 		signInPage.setPasswordField(prop.getProperty("password"));
 		signInPage.getSignInSubmitBtn().click();
+		homePage.getLogo().click();
 	}
 }

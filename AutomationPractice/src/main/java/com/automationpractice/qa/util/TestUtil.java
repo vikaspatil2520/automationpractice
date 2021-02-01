@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
@@ -109,8 +110,15 @@ public class TestUtil extends TestBase{
 		return element;
 	}
 	
+	public static List<WebElement> waitForListOfElementPresence(WebDriver driver, By selector, int waitInterval) {
+		List<WebElement> elementList = (new WebDriverWait(driver, waitInterval)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(selector));
+		return elementList;
+	}
 	public static WebElement waitToBeClickable(WebDriver driver, By selector, int waitInterval) {
 		WebElement element = (new WebDriverWait(driver, waitInterval)).until(ExpectedConditions.elementToBeClickable(selector));
 		return element;
+	}
+	public static void selectProduct() {
+		
 	}
 }

@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.automationpractice.qa.testcases.HomePageTest">
+      <class name="com.automationpractice.qa.testcases.ShoppingWorkFlowTest">
         <methods>
-          <include name="homePageElementDispalyTest"/>
+          <include name="selectSingleClothTest"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.automationpractice.qa.testcases.HomePageTest -->
+      </class> <!-- com.automationpractice.qa.testcases.ShoppingWorkFlowTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
