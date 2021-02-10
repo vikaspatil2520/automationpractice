@@ -84,4 +84,9 @@ public class ShoppingCartSummeryPage {
 		return TestUtil.waitForElementPresence(driver, By.cssSelector("a[title='Proceed to checkout']"),
 				Constants.IMPLICIT_WAIT);
 	}
+	
+	public String getShoppingCartEmptyWarningMsg() {
+		return TestUtil.waitForElementPresence(driver, By.cssSelector(".alert.alert-warning"),
+				Constants.IMPLICIT_WAIT).getText();
+	}
 }

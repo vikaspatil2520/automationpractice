@@ -33,4 +33,8 @@ public class HomePage {
 	public WebElement getSlider() {
 		return TestUtil.waitForElementPresence(driver, By.cssSelector("#homeslider > li:nth-child(2) > a > img"), Constants.IMPLICIT_WAIT);
 	}
+	
+	public WebElement getMyAccountLink() {
+		return TestUtil.waitForElementPresence(driver, By.linkText("My account"), Constants.IMPLICIT_WAIT);
+	}
 }

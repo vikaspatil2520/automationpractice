@@ -1,8 +1,9 @@
 package com.automationpractice.qa.model;
 
 public class ProductDetails {
-	
+
 	private String productUrl;
+	private String productName;
 	private String productDescription;
 	private String availability;
 	private Double unitiPrice;
@@ -15,6 +16,14 @@ public class ProductDetails {
 
 	public void setProductUrl(String productUrl) {
 		this.productUrl = productUrl;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 	public String getProductDescription() {

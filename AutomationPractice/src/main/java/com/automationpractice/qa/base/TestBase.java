@@ -65,7 +65,11 @@ public class TestBase {
 		SignInPage signInPage=new SignInPage(driver);
 		HomePage homePage=new HomePage(driver);
 		signInPage.getSignInLink().click();
+		
+		signInPage.getSignInEmailField().clear();
 		signInPage.setEmailField(prop.getProperty("emailId"));
+		
+		signInPage.getSignInPasswordField().clear();
 		signInPage.setPasswordField(prop.getProperty("password"));
 		signInPage.getSignInSubmitBtn().click();
 		homePage.getLogo().click();
